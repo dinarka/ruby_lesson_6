@@ -1,15 +1,8 @@
 
-
-def ask (new_line)
-    require 'time'
+def ask (request)
     time = Time.new
-
-# Не пойму, как проверить, что введенные данные - числовые или строчные.
-#    if new_line.is_a? Numeric
-#      puts "Error: wrong input type."
-
-#    elsif new_line.is_a? String
-      info = case new_line
+    if request.is_a? String
+      info = case request
         when 'time'
           "It's #{time.strftime("%H:%M")} now."
         when 'date'
@@ -25,7 +18,7 @@ def ask (new_line)
         end
       puts info
     end
-#end
+end
 
 puts "Enter your request (time, date, day, remaining days or weeks):"
 input = gets.chomp
